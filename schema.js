@@ -9,14 +9,6 @@ const typeDefs = gql`
         response: String!
         timestamp: String!
     }
-
-    extend type Query {
-        getRequestResponse(location: String!, personality: String!): String!
-    }
-
-    extend type Mutation {
-        saveRequestResponse(location: String!, personality: String!, response: String!): RequestResponse!
-    }
 `;
 
 export default typeDefs;
