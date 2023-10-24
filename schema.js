@@ -1,8 +1,7 @@
-import { gql } from 'apollo-server-express';
+import { gql } from 'graphql-tag';
 
 const typeDefs = gql`
     # Définir une clé pour la fédération. 
-    # Ici, je suppose que "id" est unique et peut être utilisé pour référencer une entrée RequestResponse.
     type RequestResponse @key(fields: "id") {
         id: ID!
         location: String!
@@ -15,9 +14,6 @@ const typeDefs = gql`
         getRequestResponse(location: String!, personality: String!): String!
     }
 
-    extend type Mutation {
-        saveRequestResponse(location: String!, personality: String!, response: String!): RequestResponse!
-    }
 `;
 
 export default typeDefs;
