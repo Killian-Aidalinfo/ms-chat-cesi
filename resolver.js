@@ -27,7 +27,7 @@ const resolvers = {
             console.log("🚀 Données non trouvées dans la base de données, interrogation de ms-gptlink...");
 
             // Faire une requête à ms-gptlink
-            const prompt = `Salut Guide ! Je suis en vacances à ${location}. J’aime les sorties de type : ${personality}. Peux-tu me donner des recommandations numérotées sur ce que je pourrais faire ? N'oublie pas d'inclure un lien Google de l’établissement ou du lieu pour m'assurer qu'il est bien ouvert. avant le lien google écrit cela : "Vous pouvez trouver plus d'informations ici :". Si nécessaire, tu peux étendre la zone à quelques kilomètres autour pour plus de suggestions. Merci !`;
+            const prompt = `Salut Guide ! Je suis en vacances à ${location}. J’aime les sorties de type : ${personality}. Peux-tu me donner des recommandations numérotées sur ce que je pourrais faire ? Commence le nom du lieu après le numéro avec le texte Titre : . Commence la description du lieu par Description : . Essaye de proposer une dizaines de lieux. Si nécessaire, tu peux étendre la zone à quelques kilomètres autour pour plus de suggestions. Merci !`;
 
             const gptResponse = await fetch('http://ms-gptlink:4000', {
                 method: 'POST',
