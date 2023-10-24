@@ -1,8 +1,7 @@
-import { gql } from 'apollo-server-express';
+import { gql } from 'graphql-tag';
 
 const typeDefs = gql`
     # Définir une clé pour la fédération. 
-    # Ici, je suppose que "id" est unique et peut être utilisé pour référencer une entrée RequestResponse.
     type RequestResponse @key(fields: "id") {
         id: ID!
         location: String!
