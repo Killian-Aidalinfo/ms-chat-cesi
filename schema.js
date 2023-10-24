@@ -9,6 +9,11 @@ const typeDefs = gql`
         response: String!
         timestamp: String!
     }
+
+    extend type Query {
+        getRequestResponse(location: String!, personality: String!): String!
+    }
+
 `;
 
 export default typeDefs;
